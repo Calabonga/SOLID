@@ -1,4 +1,4 @@
-﻿using SOLID_SRP.Demo.Service;
+﻿using SOLID_SRP.Demo.ViewModels;
 
 namespace SOLID_SRP.Demo.Helpers
 {

@@ -23,15 +23,14 @@ namespace SOLID_SRP.Demo
 
             PrintOrders("Before changes");
 
-            var order = orderService.Checkout(orderId, newStatus);
+            var order = orderService.Approve(orderId, newStatus);
             if (order == null)
             {
-                Printer.PrintError("Order not found");
+                Logger.LogError("Order not found");
                 return;
             }
 
             PrintOrders("After changed");
-
         }
 
         #region helpers
@@ -40,14 +39,14 @@ namespace SOLID_SRP.Demo
         {
             if (!string.IsNullOrEmpty(message))
             {
-                Printer.PrintInfo(message);
+                Logger.LogInfo(message);
             }
-            Printer.Print("-----------------------------------------------------------------------");
-            Printer.Print("| ORDERS                                                              |");
-            Printer.Print("-----------------------------------------------------------------------");
+            Logger.Print("-----------------------------------------------------------------------");
+            Logger.Print("| ORDERS                                                              |");
+            Logger.Print("-----------------------------------------------------------------------");
             var db = _container.Resolve<IDbContext>();
-            Printer.Print(db.Orders, o => $"{o.Id,6}  {o.Number,9} {o.Status, 10} {o.CreatedAt:d} {o.Customer.UserName,8}");
-            Printer.Print("-----------------------------------------------------------------------");
+            Logger.Print(db.Orders, o => $"{o.Id,6}  {o.Number,9} {o.Status, 10} {o.CreatedAt:d} {o.Customer.UserName,8}");
+            Logger.Print("-----------------------------------------------------------------------");
         }
 
         #endregion

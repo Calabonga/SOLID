@@ -59,6 +59,8 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\EmailMessage.cs" />
+    <Compile Include="Service\IOrderService.cs" />
     <Compile Include="Service\OrderService.cs" />
   </ItemGroup>
   <ItemGroup>
