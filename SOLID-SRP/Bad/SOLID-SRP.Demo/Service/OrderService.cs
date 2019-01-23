@@ -2,6 +2,7 @@
 using SOLID_SRP.Demo.Enumerations;
 using SOLID_SRP.Demo.Helpers;
 using SOLID_SRP.Demo.Models;
+using SOLID_SRP.Demo.ViewModels;
 
 namespace SOLID_SRP.Demo.Service
 {
@@ -15,7 +16,7 @@ namespace SOLID_SRP.Demo.Service
         }
 
         /// <inheritdoc />
-        public Order Checkout(int id, Status status)
+        public Order Approve(int id, Status status)
         {
             var order = _context.Orders.SingleOrDefault(x => x.Id == id);
             if (order == null)
@@ -33,7 +34,6 @@ namespace SOLID_SRP.Demo.Service
                         };
                         
                         var client = new SmtpClient();
-                        
                         client.Send(email);
                     }
                 }
@@ -56,23 +56,5 @@ namespace SOLID_SRP.Demo.Service
             client1.Send(notification);
             return order;
         }
-    }
-
-    public class EmailMessage
-    {
-        public string Title { get; set; }
-        public string Message { get; set; }
-        public string Email { get; set; }
-    }
-
-    public interface IOrderService
-    {
-        /// <summary>
-        /// Updates order current status
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="status"></param>
-        /// <returns></returns>
-        Order Checkout(int id, Status status);
     }
 }

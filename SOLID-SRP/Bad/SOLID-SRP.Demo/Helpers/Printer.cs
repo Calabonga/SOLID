@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SOLID_SRP.Demo.Helpers
 {
-    public static class Printer
+    public static class Logger
     {
         public static void Print(string message)
         {
@@ -18,14 +18,14 @@ namespace SOLID_SRP.Demo.Helpers
             }
         }
 
-        public static void PrintError(string message)
+        public static void LogError(string message)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"ERROR: {message}");
             Console.ResetColor();
         }
 
-        public static void PrintInfo(string message)
+        public static void LogInfo(string message)
         {
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine($"INFO: {message}");
