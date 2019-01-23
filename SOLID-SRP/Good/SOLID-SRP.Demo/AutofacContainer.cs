@@ -9,7 +9,8 @@ namespace SOLID_SRP.Demo
         public static IContainer Create()
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<OrderService>().As<IOrderService>();
+            builder.RegisterType<OrderProvider>().As<IOrderProvider>();
+            builder.RegisterType<EmailService>().As<IEmailService>();
 
             var dbContext = new DbContext
             {

@@ -6,25 +6,32 @@ using SOLID_SRP.Demo.ViewModels;
 
 namespace SOLID_SRP.Demo.Service
 {
-    public class OrderService : IOrderService
+    public class OrderProvider : IOrderProvider
     {
-        private readonly IDbContext _context;
+        private readonly IOrderService _orderService;
+        private readonly IProfileService _profileService;
+        private readonly IEmailService _emailService;
 
-        public OrderService(IDbContext context)
+        public OrderProvider(
+            IOrderService orderService,
+            IProfileService profileService,
+            IEmailService emailService)
         {
-            _context = context;
+            _orderService = orderService;
+            _profileService = profileService;
+            _emailService = emailService;
         }
 
         /// <inheritdoc />
         public Order Approve(int id, Status status)
         {
-            var order = _context.Orders.SingleOrDefault(x => x.Id == id);
+            var order = _orderService.Approve(id, status);
             if (order == null)
             {
-                var users = _context.Users.Where(x => x.IsAdmin).ToList();
-                if (users.Any())
+                var admins = _profileService.GetAdministrators().ToList();
+                if (admins.Any())
                 {
-                    foreach (var user in users)
+                    foreach (var user in admins)
                     {
                         var email = new EmailMessage
                         {
@@ -32,28 +39,21 @@ namespace SOLID_SRP.Demo.Service
                             Message = "Order not found",
                             Email = user.Email
                         };
-                        
-                        var client = new SmtpClient();
-                        client.Send(email);
+                        _emailService.Send(email);
                     }
                 }
 
                 return null;
             }
 
-            order.Status = status;
-            _context.SaveChanges();
-
-            var customer = order.Customer;
+            var customer = _profileService.GetUserById(order.Customer.Id);
             var notification = new EmailMessage
             {
                 Title = "Status changed",
                 Message = $"Your order status was changed to {order.Status}",
                 Email = customer.Email
             };
-
-            var client1 = new SmtpClient();
-            client1.Send(notification);
+            _emailService.Send(notification);
             return order;
         }
     }

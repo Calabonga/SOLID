@@ -14,7 +14,7 @@ namespace SOLID_SRP.Demo
             #region Dependecy container
 
             _container = AutofacContainer.Create();
-            var orderService = _container.Resolve<IOrderService>();
+            var orderService = _container.Resolve<IOrderProvider>();
 
             #endregion
 
