@@ -23,7 +23,6 @@ namespace SOLID_SRP.Demo.Service
                 var users = _context.Users.Where(x => x.IsAdmin).ToList();
                 if (users.Any())
                 {
-
                     foreach (var user in users)
                     {
                         var email = new EmailMessage
@@ -44,6 +43,17 @@ namespace SOLID_SRP.Demo.Service
 
             order.Status = status;
             _context.SaveChanges();
+
+            var customer = order.Customer;
+            var notification = new EmailMessage
+            {
+                Title = "Status changed",
+                Message = $"Your order status was changed to {order.Status}",
+                Email = customer.Email
+            };
+
+            var client1 = new SmtpClient();
+            client1.Send(notification);
             return order;
         }
     }
