@@ -1,6 +1,6 @@
-﻿using SOLID_SRP.Demo.ViewModels;
+﻿using SOLID_SRP.Demo.Infrastructure.ViewModels;
 
-namespace SOLID_SRP.Demo.Helpers
+namespace SOLID_SRP.Demo.Infrastructure.Helpers
 {
     /// <summary>
     /// Fake SmtpClient for demo purpose only

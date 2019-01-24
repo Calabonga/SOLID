@@ -1,7 +1,7 @@
 ﻿using System;
 using SOLID_SRP.Demo.Enumerations;
 
-namespace SOLID_SRP.Demo.Models
+namespace SOLID_SRP.Demo.Infrastructure.Models
 {
     /// <summary>
     /// Business order

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using SOLID_SRP.Demo.Models;
+using SOLID_SRP.Demo.Infrastructure.Models;
 
-namespace SOLID_SRP.Demo.Helpers
+namespace SOLID_SRP.Demo.Infrastructure.Helpers
 {
     public class DbContext : IDbContext
     {

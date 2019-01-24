@@ -1,4 +1,4 @@
-﻿namespace SOLID_SRP.Demo.Models
+﻿namespace SOLID_SRP.Demo.Infrastructure.Models
 {
     /// <summary>
     /// User

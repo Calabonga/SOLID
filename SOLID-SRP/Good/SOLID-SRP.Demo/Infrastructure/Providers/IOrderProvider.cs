@@ -1,7 +1,8 @@
-﻿using SOLID_SRP.Demo.Enumerations;
-using SOLID_SRP.Demo.Models;
+﻿using Calabonga.OperationResults;
+using SOLID_SRP.Demo.Enumerations;
+using SOLID_SRP.Demo.Infrastructure.Models;
 
-namespace SOLID_SRP.Demo.Service
+namespace SOLID_SRP.Demo.Infrastructure.Providers
 {
     /// <summary>
     /// Order service
@@ -14,6 +15,6 @@ namespace SOLID_SRP.Demo.Service
         /// <param name="id"></param>
         /// <param name="status"></param>
         /// <returns></returns>
-        Order Approve(int id, Status status);
+        OperationResult<Order> ChangeStatus(int id, Status status);
     }
 }

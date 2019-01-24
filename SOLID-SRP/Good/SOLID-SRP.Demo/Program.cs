@@ -1,7 +1,9 @@
 ﻿using Autofac;
 using SOLID_SRP.Demo.Enumerations;
-using SOLID_SRP.Demo.Helpers;
-using SOLID_SRP.Demo.Service;
+using SOLID_SRP.Demo.Infrastructure;
+using SOLID_SRP.Demo.Infrastructure.Helpers;
+using SOLID_SRP.Demo.Infrastructure.Providers;
+using SOLID_SRP.Demo.Infrastructure.Service;
 
 namespace SOLID_SRP.Demo
 {
@@ -13,7 +15,7 @@ namespace SOLID_SRP.Demo
         {
             #region Dependecy container
 
-            _container = AutofacContainer.Create();
+            _container = DependencyContainer.Create();
             var orderService = _container.Resolve<IOrderProvider>();
 
             #endregion
@@ -23,10 +25,10 @@ namespace SOLID_SRP.Demo
 
             PrintOrders("Before changes");
 
-            var order = orderService.Approve(orderId, newStatus);
-            if (order == null)
+            var changeOrderOperation = orderService.ChangeStatus(orderId, newStatus);
+            if (!changeOrderOperation.Ok)
             {
-                Logger.LogError("Order not found");
+                Logger.LogError(changeOrderOperation.Error);
                 return;
             }
 

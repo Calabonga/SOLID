@@ -1,4 +1,4 @@
-﻿namespace SOLID_SRP.Demo.ViewModels
+﻿namespace SOLID_SRP.Demo.Infrastructure.ViewModels
 {
     /// <summary>
     /// Email message view models

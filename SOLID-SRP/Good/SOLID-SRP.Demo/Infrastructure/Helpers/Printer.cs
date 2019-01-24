@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SOLID_SRP.Demo.Helpers
+namespace SOLID_SRP.Demo.Infrastructure.Helpers
 {
     public static class Logger
     {
@@ -22,6 +22,13 @@ namespace SOLID_SRP.Demo.Helpers
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"ERROR: {message}");
+            Console.ResetColor();
+        }
+
+        public static void LogError(Exception exception)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"ERROR: {ExceptionHelper.GetMessages(exception)}");
             Console.ResetColor();
         }
 

@@ -49,23 +49,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutofacContainer.cs" />
+    <Compile Include="Infrastructure\DependencyContainer.cs" />
     <Compile Include="Enumerations\Status.cs" />
-    <Compile Include="Helpers\Database.cs" />
-    <Compile Include="Helpers\DbContext.cs" />
-    <Compile Include="Helpers\IDbContext.cs" />
-    <Compile Include="Helpers\Printer.cs" />
-    <Compile Include="Helpers\SmptClient.cs" />
-    <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Exceptions\AdministratorNotFound.cs" />
+    <Compile Include="Exceptions\OrderNotFoundException.cs" />
+    <Compile Include="Infrastructure\Factories\IEmailMessageFactory.cs" />
+    <Compile Include="Infrastructure\Helpers\Database.cs" />
+    <Compile Include="Infrastructure\Helpers\DbContext.cs" />
+    <Compile Include="Infrastructure\Helpers\ExceptionHelper.cs" />
+    <Compile Include="Infrastructure\Helpers\IDbContext.cs" />
+    <Compile Include="Infrastructure\Helpers\Printer.cs" />
+    <Compile Include="Infrastructure\Helpers\SmptClient.cs" />
+    <Compile Include="Infrastructure\Models\Order.cs" />
+    <Compile Include="Infrastructure\Models\User.cs" />
+    <Compile Include="Infrastructure\Providers\IEmailSender.cs" />
+    <Compile Include="Infrastructure\Providers\NotificationProvider.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\IEmailService.cs" />
-    <Compile Include="Service\IOrderService.cs" />
-    <Compile Include="Service\IProfileService.cs" />
-    <Compile Include="ViewModels\EmailMessage.cs" />
-    <Compile Include="Service\IOrderProvider.cs" />
-    <Compile Include="Service\OrderProvider.cs" />
+    <Compile Include="Infrastructure\Service\EmailService.cs" />
+    <Compile Include="Infrastructure\Factories\EmailMessageFactory.cs" />
+    <Compile Include="Infrastructure\Service\IEmailService.cs" />
+    <Compile Include="Infrastructure\Service\IOrderService.cs" />
+    <Compile Include="Infrastructure\Service\IProfileService.cs" />
+    <Compile Include="Infrastructure\Service\OrderService.cs" />
+    <Compile Include="Infrastructure\Service\ProfileService.cs" />
+    <Compile Include="Infrastructure\ViewModels\EmailMessage.cs" />
+    <Compile Include="Infrastructure\Providers\IOrderProvider.cs" />
+    <Compile Include="Infrastructure\Providers\OrderProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
