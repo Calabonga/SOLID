@@ -62,7 +62,7 @@
     <Compile Include="Infrastructure\Helpers\SmptClient.cs" />
     <Compile Include="Infrastructure\Models\Order.cs" />
     <Compile Include="Infrastructure\Models\User.cs" />
-    <Compile Include="Infrastructure\Providers\IEmailSender.cs" />
+    <Compile Include="Infrastructure\Providers\INotificationProvider.cs" />
     <Compile Include="Infrastructure\Providers\NotificationProvider.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,10 +1,8 @@
-﻿using System.Linq;
-using Calabonga.OperationResults;
+﻿using Calabonga.OperationResults;
 using SOLID_SRP.Demo.Enumerations;
 using SOLID_SRP.Demo.Exceptions;
 using SOLID_SRP.Demo.Infrastructure.Models;
 using SOLID_SRP.Demo.Infrastructure.Service;
-using SOLID_SRP.Demo.Infrastructure.ViewModels;
 
 namespace SOLID_SRP.Demo.Infrastructure.Providers
 {

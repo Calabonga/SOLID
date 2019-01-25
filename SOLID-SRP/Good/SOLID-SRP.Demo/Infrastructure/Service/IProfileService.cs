@@ -8,8 +8,17 @@ namespace SOLID_SRP.Demo.Infrastructure.Service
     /// </summary>
     public interface IProfileService
     {
+        /// <summary>
+        /// Returns user by identifier
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         User GetUserById(int userId);
 
+        /// <summary>
+        /// Returns all system administrators
+        /// </summary>
+        /// <returns></returns>
         IEnumerable<User> GetAdministrators();
     }
 }

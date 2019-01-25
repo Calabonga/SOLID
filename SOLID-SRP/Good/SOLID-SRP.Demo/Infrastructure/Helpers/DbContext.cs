@@ -3,6 +3,9 @@ using SOLID_SRP.Demo.Infrastructure.Models;
 
 namespace SOLID_SRP.Demo.Infrastructure.Helpers
 {
+    /// <summary>
+    /// Implementation of <see cref="IDbContext"/> as faked EntityFramework context.
+    /// </summary>
     public class DbContext : IDbContext
     {
         /// <inheritdoc />
@@ -14,7 +17,7 @@ namespace SOLID_SRP.Demo.Infrastructure.Helpers
         /// <inheritdoc />
         public void SaveChanges()
         {
-            //throw new System.NotImplementedException();
+            // save data to database
         }
     }
 }

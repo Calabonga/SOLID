@@ -17,11 +17,14 @@ namespace SOLID_SRP.Demo.Infrastructure.Service
             _context = context;
         }
 
+
+        /// <inheritdoc />
         public User GetUserById(int userId)
         {
             return _context.Users.SingleOrDefault(x => x.Id == userId);
         }
 
+        /// <inheritdoc />
         public IEnumerable<User> GetAdministrators()
         {
             return _context.Users.Where(x => x.IsAdmin);

@@ -19,6 +19,7 @@ namespace SOLID_SRP.Demo.Infrastructure.Service
             _context = context;
         }
 
+        /// <inheritdoc />
         public OperationResult<Order> ChangeStatus(int id, Status status)
         {
             var operation = OperationResult.CreateResult<Order>();

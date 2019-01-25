@@ -3,6 +3,9 @@ using SOLID_SRP.Demo.Infrastructure.Models;
 
 namespace SOLID_SRP.Demo.Infrastructure.Helpers
 {
+    /// <summary>
+    /// DbContext emulation
+    /// </summary>
     public interface IDbContext
     {
         /// <summary>
