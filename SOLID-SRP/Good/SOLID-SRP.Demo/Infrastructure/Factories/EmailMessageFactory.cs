@@ -1,5 +1,4 @@
-﻿using SOLID_SRP.Demo.Infrastructure.Models;
-using SOLID_SRP.Demo.Infrastructure.ViewModels;
+﻿using SOLID_SRP.Demo.Infrastructure.ViewModels;
 
 namespace SOLID_SRP.Demo.Infrastructure.Factories
 {

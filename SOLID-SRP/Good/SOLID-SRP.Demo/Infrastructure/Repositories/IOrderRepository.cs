@@ -1,5 +1,4 @@
 ﻿using Calabonga.OperationResults;
-using SOLID_SRP.Demo.Enumerations;
 using SOLID_SRP.Demo.Infrastructure.Models;
 
 namespace SOLID_SRP.Demo.Infrastructure.Repositories
@@ -17,11 +16,10 @@ namespace SOLID_SRP.Demo.Infrastructure.Repositories
         OperationResult<Order> GetById(int orderId);
 
         /// <summary>
-        /// Updates status for order
+        /// Updates order
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="status"></param>
+        /// <param name="order"></param>
         /// <returns></returns>
-        OperationResult<Order> ChangeStatus(int id, Status status);
+        OperationResult<Order> Update(Order order);
     }
 }

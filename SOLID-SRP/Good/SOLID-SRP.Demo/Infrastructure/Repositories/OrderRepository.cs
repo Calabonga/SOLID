@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using Calabonga.OperationResults;
-using SOLID_SRP.Demo.Enumerations;
 using SOLID_SRP.Demo.Exceptions;
 using SOLID_SRP.Demo.Infrastructure.Helpers;
 using SOLID_SRP.Demo.Infrastructure.Models;
@@ -19,6 +18,11 @@ namespace SOLID_SRP.Demo.Infrastructure.Repositories
             _context = context;
         }
 
+        /// <summary>
+        /// Returns Order from database
+        /// </summary>
+        /// <param name="orderId"></param>
+        /// <returns></returns>
         public OperationResult<Order> GetById(int orderId)
         {
             var operation = OperationResult.CreateResult<Order>();
@@ -32,19 +36,14 @@ namespace SOLID_SRP.Demo.Infrastructure.Repositories
             return operation;
         }
 
-        /// <inheritdoc />
-        public OperationResult<Order> ChangeStatus(int id, Status status)
+        /// <summary>
+        /// Updates order
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        public OperationResult<Order> Update(Order order)
         {
             var operation = OperationResult.CreateResult<Order>();
-            var getOrderOperation = GetById(id);
-            if (!getOrderOperation.Ok)
-            {
-                operation.AddError(getOrderOperation.Error);
-                return operation;
-            }
-
-            var order = getOrderOperation.Result;
-            order.Status = status;
             _context.SaveChanges();
             operation.Result = order;
             return operation;

@@ -26,7 +26,7 @@ namespace SOLID_SRP.Demo.Infrastructure.Providers
         public OperationResult<Order> ChangeStatus(int id, Status status)
         {
             var operation = OperationResult.CreateResult<Order>();
-            var orderUpdateOperation = _orderRepository.ChangeStatus(id, status);
+            var orderUpdateOperation = _orderRepository.GetById(id);
             if (!orderUpdateOperation.Ok)
             {
                 var notifyOperation = _notificationProvider.NotifyAdminOrderNotFound(id);
@@ -40,6 +40,8 @@ namespace SOLID_SRP.Demo.Infrastructure.Providers
             }
 
             var order = orderUpdateOperation.Result;
+            order.Status = status;
+            _orderRepository.Update(order);
             var customer = _userRepository.GetUserById(order.Customer.Id);
             _notificationProvider.NotifyCustomerOrderUpdated(customer.Email);
             operation.Result = order;
