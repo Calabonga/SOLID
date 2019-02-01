@@ -3,16 +3,16 @@ using System.Linq;
 using SOLID_SRP.Demo.Infrastructure.Helpers;
 using SOLID_SRP.Demo.Infrastructure.Models;
 
-namespace SOLID_SRP.Demo.Infrastructure.Service
+namespace SOLID_SRP.Demo.Infrastructure.Repositories
 {
     /// <summary>
-    /// Implementation of <see cref="IProfileService"/>
+    /// Implementation of <see cref="IUserRepository"/>
     /// </summary>
-    public class ProfileService : IProfileService
+    public class UserRepository : IUserRepository
     {
         private readonly IDbContext _context;
 
-        public ProfileService(IDbContext context)
+        public UserRepository(IDbContext context)
         {
             _context = context;
         }

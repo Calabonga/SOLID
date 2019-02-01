@@ -69,10 +69,10 @@
     <Compile Include="Infrastructure\Service\EmailService.cs" />
     <Compile Include="Infrastructure\Factories\EmailMessageFactory.cs" />
     <Compile Include="Infrastructure\Service\IEmailService.cs" />
-    <Compile Include="Infrastructure\Service\IOrderService.cs" />
-    <Compile Include="Infrastructure\Service\IProfileService.cs" />
-    <Compile Include="Infrastructure\Service\OrderService.cs" />
-    <Compile Include="Infrastructure\Service\ProfileService.cs" />
+    <Compile Include="Infrastructure\Repositories\IOrderRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\IUserRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\OrderRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\UserRepository.cs" />
     <Compile Include="Infrastructure\ViewModels\EmailMessage.cs" />
     <Compile Include="Infrastructure\Providers\IOrderProvider.cs" />
     <Compile Include="Infrastructure\Providers\OrderProvider.cs" />

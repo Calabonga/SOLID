@@ -2,6 +2,7 @@
 using Calabonga.OperationResults;
 using SOLID_SRP.Demo.Exceptions;
 using SOLID_SRP.Demo.Infrastructure.Factories;
+using SOLID_SRP.Demo.Infrastructure.Repositories;
 using SOLID_SRP.Demo.Infrastructure.Service;
 
 namespace SOLID_SRP.Demo.Infrastructure.Providers
@@ -13,20 +14,20 @@ namespace SOLID_SRP.Demo.Infrastructure.Providers
     {
         private readonly IEmailService _emailService;
         private readonly IEmailMessageFactory _factory;
-        private readonly IProfileService _profileService;
+        private readonly IUserRepository _userRepository;
 
-        public NotificationProvider(IEmailService emailService, IEmailMessageFactory factory, IProfileService profileService)
+        public NotificationProvider(IEmailService emailService, IEmailMessageFactory factory, IUserRepository userRepository)
         {
             _emailService = emailService;
             _factory = factory;
-            _profileService = profileService;
+            _userRepository = userRepository;
         }
 
         /// <inheritdoc />
         public OperationResult<bool> NotifyAdminOrderNotFound(int orderId)
         {
             var operation = OperationResult.CreateResult<bool>();
-            var admins = _profileService.GetAdministrators().ToList();
+            var admins = _userRepository.GetAdministrators().ToList();
             if (admins.Any())
             {
                 foreach (var user in admins)

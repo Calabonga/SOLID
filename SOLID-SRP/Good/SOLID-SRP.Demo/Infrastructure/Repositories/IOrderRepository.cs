@@ -2,12 +2,12 @@
 using SOLID_SRP.Demo.Enumerations;
 using SOLID_SRP.Demo.Infrastructure.Models;
 
-namespace SOLID_SRP.Demo.Infrastructure.Service
+namespace SOLID_SRP.Demo.Infrastructure.Repositories
 {
     /// <summary>
     /// Order service
     /// </summary>
-    public interface IOrderService
+    public interface IOrderRepository
     {
         /// <summary>
         /// Updates status for order

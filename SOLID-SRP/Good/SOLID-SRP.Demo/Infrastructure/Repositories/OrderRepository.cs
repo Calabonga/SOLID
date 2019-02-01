@@ -5,16 +5,16 @@ using SOLID_SRP.Demo.Exceptions;
 using SOLID_SRP.Demo.Infrastructure.Helpers;
 using SOLID_SRP.Demo.Infrastructure.Models;
 
-namespace SOLID_SRP.Demo.Infrastructure.Service
+namespace SOLID_SRP.Demo.Infrastructure.Repositories
 {
     /// <summary>
     /// Order service implementation
     /// </summary>
-    public class OrderService : IOrderService
+    public class OrderRepository : IOrderRepository
     {
         private readonly IDbContext _context;
 
-        public OrderService(IDbContext context)
+        public OrderRepository(IDbContext context)
         {
             _context = context;
         }

@@ -2,6 +2,7 @@
 using SOLID_SRP.Demo.Infrastructure.Factories;
 using SOLID_SRP.Demo.Infrastructure.Helpers;
 using SOLID_SRP.Demo.Infrastructure.Providers;
+using SOLID_SRP.Demo.Infrastructure.Repositories;
 using SOLID_SRP.Demo.Infrastructure.Service;
 
 namespace SOLID_SRP.Demo.Infrastructure
@@ -24,9 +25,9 @@ namespace SOLID_SRP.Demo.Infrastructure
 
             // Services
             builder.RegisterType<OrderProvider>().As<IOrderProvider>();
-            builder.RegisterType<OrderService>().As<IOrderService>();
+            builder.RegisterType<OrderRepository>().As<IOrderRepository>();
             builder.RegisterType<EmailService>().As<IEmailService>();
-            builder.RegisterType<ProfileService>().As<IProfileService>();
+            builder.RegisterType<UserRepository>().As<IUserRepository>();
 
             // Other
             builder.RegisterType<EmailMessageFactory>().As<IEmailMessageFactory>();
