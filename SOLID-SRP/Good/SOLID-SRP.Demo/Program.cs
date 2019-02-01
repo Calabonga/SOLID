@@ -16,6 +16,7 @@ namespace SOLID_SRP.Demo
 
             _container = DependencyContainer.Create();
             var orderProvider = _container.Resolve<IOrderProvider>();
+            var notificationProvider = _container.Resolve<INotificationProvider>();
 
             #endregion
 
@@ -27,10 +28,19 @@ namespace SOLID_SRP.Demo
             var changeOrderOperation = orderProvider.ChangeStatus(orderId, newStatus);
             if (!changeOrderOperation.Ok)
             {
+                var notifyOperation = notificationProvider.NotifyAdminOrderNotFound(orderId);
+                if (!notifyOperation.Ok)
+                {
+                    Logger.LogError(notifyOperation.Error);
+                    Logger.LogError(changeOrderOperation.Error);
+                    return;
+                }
                 Logger.LogError(changeOrderOperation.Error);
                 return;
             }
 
+            var customer = changeOrderOperation.Result.Customer;
+            notificationProvider.NotifyCustomerOrderUpdated(customer.Email);
             PrintOrders("After changed");
         }
 
@@ -46,7 +56,7 @@ namespace SOLID_SRP.Demo
             Logger.Print("| ORDERS                                                              |");
             Logger.Print("-----------------------------------------------------------------------");
             var db = _container.Resolve<IDbContext>();
-            Logger.Print(db.Orders, o => $"{o.Id,6}  {o.Number,9} {o.Status, 10} {o.CreatedAt:d} {o.Customer.UserName,8}");
+            Logger.Print(db.Orders, o => $"{o.Id,6}  {o.Number,9} {o.Status,10} {o.CreatedAt:d} {o.Customer.UserName,8}");
             Logger.Print("-----------------------------------------------------------------------");
         }
 

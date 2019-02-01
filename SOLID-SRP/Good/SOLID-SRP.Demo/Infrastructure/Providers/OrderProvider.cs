@@ -10,7 +10,6 @@ namespace SOLID_SRP.Demo.Infrastructure.Providers
     {
         private readonly IOrderRepository _orderRepository;
         private readonly IUserRepository _userRepository;
-        private readonly INotificationProvider _notificationProvider;
 
         public OrderProvider(
             IOrderRepository orderRepository,
@@ -19,7 +18,6 @@ namespace SOLID_SRP.Demo.Infrastructure.Providers
         {
             _orderRepository = orderRepository;
             _userRepository = userRepository;
-            _notificationProvider = emailService;
         }
 
         /// <inheritdoc />
@@ -29,12 +27,6 @@ namespace SOLID_SRP.Demo.Infrastructure.Providers
             var orderUpdateOperation = _orderRepository.GetById(id);
             if (!orderUpdateOperation.Ok)
             {
-                var notifyOperation = _notificationProvider.NotifyAdminOrderNotFound(id);
-                if (!notifyOperation.Ok)
-                {
-                    operation.AddError(new OrderNotFoundException(notifyOperation.Error));
-                    return operation;
-                }
                 operation.AddError(orderUpdateOperation.Error);
                 return operation;
             }
@@ -42,8 +34,6 @@ namespace SOLID_SRP.Demo.Infrastructure.Providers
             var order = orderUpdateOperation.Result;
             order.Status = status;
             _orderRepository.Update(order);
-            var customer = _userRepository.GetUserById(order.Customer.Id);
-            _notificationProvider.NotifyCustomerOrderUpdated(customer.Email);
             operation.Result = order;
             return operation;
         }
