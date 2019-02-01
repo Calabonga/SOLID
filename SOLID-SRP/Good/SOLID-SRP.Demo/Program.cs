@@ -3,7 +3,6 @@ using SOLID_SRP.Demo.Enumerations;
 using SOLID_SRP.Demo.Infrastructure;
 using SOLID_SRP.Demo.Infrastructure.Helpers;
 using SOLID_SRP.Demo.Infrastructure.Providers;
-using SOLID_SRP.Demo.Infrastructure.Service;
 
 namespace SOLID_SRP.Demo
 {
@@ -16,7 +15,7 @@ namespace SOLID_SRP.Demo
             #region Dependecy container
 
             _container = DependencyContainer.Create();
-            var orderService = _container.Resolve<IOrderProvider>();
+            var orderProvider = _container.Resolve<IOrderProvider>();
 
             #endregion
 
@@ -25,7 +24,7 @@ namespace SOLID_SRP.Demo
 
             PrintOrders("Before changes");
 
-            var changeOrderOperation = orderService.ChangeStatus(orderId, newStatus);
+            var changeOrderOperation = orderProvider.ChangeStatus(orderId, newStatus);
             if (!changeOrderOperation.Ok)
             {
                 Logger.LogError(changeOrderOperation.Error);
