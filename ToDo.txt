@@ -5,6 +5,8 @@
 5. OrderRepository
 6. OrderProvider
 
+7. NotificationProvider
+
 Links:
 https://www.calabonga.net/blog/post/operationresult-otvet-servera-vsegda-ponyaten-polzovatelyu
 https://www.calabonga.net/blog/post/arhitektura-prilozhenii-konceptualnye-sloi-i-dogovorennosti-po-ih-ispolzovaniyu

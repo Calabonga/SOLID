@@ -3,7 +3,6 @@ using SOLID_SRP.Demo.Enumerations;
 using SOLID_SRP.Demo.Exceptions;
 using SOLID_SRP.Demo.Infrastructure.Models;
 using SOLID_SRP.Demo.Infrastructure.Repositories;
-using SOLID_SRP.Demo.Infrastructure.Service;
 
 namespace SOLID_SRP.Demo.Infrastructure.Providers
 {

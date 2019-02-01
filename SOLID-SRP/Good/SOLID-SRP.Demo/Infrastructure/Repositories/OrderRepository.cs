@@ -19,17 +19,31 @@ namespace SOLID_SRP.Demo.Infrastructure.Repositories
             _context = context;
         }
 
-        /// <inheritdoc />
-        public OperationResult<Order> ChangeStatus(int id, Status status)
+        public OperationResult<Order> GetById(int orderId)
         {
             var operation = OperationResult.CreateResult<Order>();
-            var order = _context.Orders.SingleOrDefault(x => x.Id == id);
-            if (order== null)
+            var order = _context.Orders.SingleOrDefault(x => x.Id == orderId);
+            if (order == null)
             {
                 operation.AddError(new OrderNotFoundException());
                 return operation;
             }
+            operation.Result = order;
+            return operation;
+        }
 
+        /// <inheritdoc />
+        public OperationResult<Order> ChangeStatus(int id, Status status)
+        {
+            var operation = OperationResult.CreateResult<Order>();
+            var getOrderOperation = GetById(id);
+            if (!getOrderOperation.Ok)
+            {
+                operation.AddError(getOrderOperation.Error);
+                return operation;
+            }
+
+            var order = getOrderOperation.Result;
             order.Status = status;
             _context.SaveChanges();
             operation.Result = order;
