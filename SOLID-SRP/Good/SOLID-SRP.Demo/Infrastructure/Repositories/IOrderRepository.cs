@@ -10,6 +10,13 @@ namespace SOLID_SRP.Demo.Infrastructure.Repositories
     public interface IOrderRepository
     {
         /// <summary>
+        /// Returns Order from database
+        /// </summary>
+        /// <param name="orderId"></param>
+        /// <returns></returns>
+        OperationResult<Order> GetById(int orderId);
+
+        /// <summary>
         /// Updates status for order
         /// </summary>
         /// <param name="id"></param>
