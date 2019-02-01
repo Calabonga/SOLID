@@ -31,7 +31,7 @@ namespace SOLID_SRP.Demo.Infrastructure.Helpers
                 new User {Id = 1004, UserName = "User3", Email = "email@ymail.ru", IsAdmin = false},
                 new User {Id = 1005, UserName = "User4", Email = "email@ymail.ru", IsAdmin = false},
                 new User {Id = 1000, UserName = "Administrator1", Email = "email@ymail.ru", IsAdmin = true},
-                 new User {Id = 1001, UserName = "Administrator2", Email = "email@ymail.ru", IsAdmin = true}
+                new User {Id = 1001, UserName = "Administrator2", Email = "email@ymail.ru", IsAdmin = true}
             };
         }
     }
