@@ -1,6 +1,5 @@
 ﻿using Calabonga.OperationResults;
 using SOLID_SRP.Demo.Enumerations;
-using SOLID_SRP.Demo.Exceptions;
 using SOLID_SRP.Demo.Infrastructure.Models;
 using SOLID_SRP.Demo.Infrastructure.Repositories;
 
@@ -9,15 +8,10 @@ namespace SOLID_SRP.Demo.Infrastructure.Providers
     public class OrderProvider : IOrderProvider
     {
         private readonly IOrderRepository _orderRepository;
-        private readonly IUserRepository _userRepository;
 
-        public OrderProvider(
-            IOrderRepository orderRepository,
-            IUserRepository userRepository,
-            INotificationProvider emailService)
+        public OrderProvider(IOrderRepository orderRepository)
         {
             _orderRepository = orderRepository;
-            _userRepository = userRepository;
         }
 
         /// <inheritdoc />

@@ -13,7 +13,7 @@ namespace SOLID_SRP.Demo.Infrastructure.Factories
             return new EmailMessage
             {
                 Title = "Status changed",
-                Message = $"Your order status was changed",
+                Message = "Your order status was changed",
                 Email = email
             };
         }
@@ -28,7 +28,5 @@ namespace SOLID_SRP.Demo.Infrastructure.Factories
                 Email = email
             };
         }
-
-        
     }
 }
