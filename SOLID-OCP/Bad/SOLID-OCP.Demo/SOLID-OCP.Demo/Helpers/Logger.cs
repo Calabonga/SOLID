@@ -25,6 +25,13 @@ namespace SOLID_OCP.Demo.Helpers
             Console.ResetColor();
         }
 
+        public static void LogWarning(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine($"WARNING: {message}");
+            Console.ResetColor();
+        }
+        
         public static void LogInfo(string message)
         {
             Console.ForegroundColor = ConsoleColor.Blue;
