@@ -58,7 +58,7 @@
     <Compile Include="Infrastructure\Helpers\DbContext.cs" />
     <Compile Include="Infrastructure\Helpers\ExceptionHelper.cs" />
     <Compile Include="Infrastructure\Helpers\IDbContext.cs" />
-    <Compile Include="Infrastructure\Helpers\Printer.cs" />
+    <Compile Include="Infrastructure\Helpers\Logger.cs" />
     <Compile Include="Infrastructure\Helpers\SmptClient.cs" />
     <Compile Include="Infrastructure\Models\Order.cs" />
     <Compile Include="Infrastructure\Models\User.cs" />
