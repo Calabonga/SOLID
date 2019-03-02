@@ -58,12 +58,7 @@ namespace SOLID_OCP.Demo
         private string GetFilePath(string fileName)
         {
             var path = Path.Combine(Environment.CurrentDirectory, fileName);
-            if (File.Exists(path))
-            {
-                return path;
-            }
-
-            return null;
+            return File.Exists(path) ? path : null;
         }
     }
 }
