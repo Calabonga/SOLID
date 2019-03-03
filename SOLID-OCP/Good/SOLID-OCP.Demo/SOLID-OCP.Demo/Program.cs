@@ -1,6 +1,7 @@
 ﻿using System;
 using Autofac;
 using SOLID_OCP.Demo.Helpers;
+using SOLID_OCP.Demo.ViewModels;
 
 namespace SOLID_OCP.Demo
 {

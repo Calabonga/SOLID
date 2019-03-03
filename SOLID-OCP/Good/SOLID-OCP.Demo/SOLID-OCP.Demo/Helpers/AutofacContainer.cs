@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using Demo.Package;
+using SOLID_OCP.Demo.ViewModels;
 
 namespace SOLID_OCP.Demo.Helpers
 {
@@ -15,6 +17,7 @@ namespace SOLID_OCP.Demo.Helpers
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<AppSettingsManager>().AsSelf();
+            builder.RegisterType<JsonSerializer>().As<IConfigSerializer<AppSettings>>();
             return builder.Build();
         }
     }
