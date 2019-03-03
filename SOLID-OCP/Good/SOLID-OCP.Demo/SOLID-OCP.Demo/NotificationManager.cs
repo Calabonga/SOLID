@@ -6,7 +6,7 @@ namespace SOLID_OCP.Demo
     /// <summary>
     /// Notification manager
     /// </summary>
-    public class NotificationManager: INotificationManager
+    public class NotificationManager
     {
         /// <summary>
         /// Send notification to administrator about order not found
@@ -23,10 +23,6 @@ namespace SOLID_OCP.Demo
             var client = new SmtpClient();
             client.Send(message);
         }
-    }
 
-    public interface INotificationManager
-    {
-        void Send();
     }
 }
