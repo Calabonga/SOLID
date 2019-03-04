@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SOLID_OCP.Demo.Helpers;
+﻿using SOLID_OCP.Demo.Helpers;
 
 namespace SOLID_LSP
 {
@@ -13,7 +8,8 @@ namespace SOLID_LSP
         {
             #region Container creations and some resolvings
             var container = AutofacContainer.Create();
-            var settingsManager = container.Resolve<AppSettingsManager>();
+            //resolve types you need
+            //var settingsManager = container.Resolve<AppSettingsManager>();
             #endregion
         }
     }

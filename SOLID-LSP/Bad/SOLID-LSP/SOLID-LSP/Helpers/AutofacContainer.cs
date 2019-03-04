@@ -14,7 +14,9 @@ namespace SOLID_OCP.Demo.Helpers
         public static IContainer Create()
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<AppSettingsManager>().AsSelf();
+            // Add your Types
+            //builder.RegisterType<AppSettingsManager>().AsSelf();
+
             return builder.Build();
         }
     }
