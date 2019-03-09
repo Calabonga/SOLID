@@ -1,7 +1,6 @@
-﻿using System;
-using SOLID_OCP.Demo.Helpers;
+﻿using SOLID_OCP.Demo.Helpers;
 
-namespace SOLID_LSP.Entities
+namespace SOLID_LSP.Entities.Birds
 {
     /// <summary>
     /// Duck is the bird who can fly

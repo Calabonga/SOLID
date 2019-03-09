@@ -1,4 +1,4 @@
-﻿namespace SOLID_LSP.Entities
+﻿namespace SOLID_LSP.Entities.Birds
 {
     /// <summary>
     /// Bird abstract class
