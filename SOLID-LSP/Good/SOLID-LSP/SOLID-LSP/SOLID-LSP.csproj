@@ -44,19 +44,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Cars\ElectricVehicle.cs" />
     <Compile Include="Entities\Birds\Duck.cs" />
     <Compile Include="Entities\Birds\Eagle.cs" />
     <Compile Include="Entities\Birds\Bird.cs" />
+    <Compile Include="Entities\Birds\FlyingBird.cs" />
     <Compile Include="Entities\Birds\Ostrich.cs" />
     <Compile Include="Entities\Cars\Car.cs" />
+    <Compile Include="Entities\Cars\ICanRecharge.cs" />
+    <Compile Include="Entities\Cars\Vehicle.cs" />
     <Compile Include="Entities\Cars\FuelType.cs" />
     <Compile Include="Entities\Cars\Truck.cs" />
+    <Compile Include="Entities\Cars\FuelVehicle.cs" />
     <Compile Include="Helpers\Logger.cs" />
+    <Compile Include="Entities\Cars\HybridVehicle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RunningBird.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram5.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

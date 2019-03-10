@@ -5,13 +5,8 @@ namespace SOLID_LSP.Entities.Birds
     /// <summary>
     /// Ostrich is the bird who can't fly
     /// </summary>
-    public class Ostrich : Bird
+    public class Ostrich : RunningBird
     {
-        /// <inheritdoc />
-        public override void Fly()
-        {
-            // I cannot fly
-            throw new NotImplementedException();
-        }
+
     }
 }
