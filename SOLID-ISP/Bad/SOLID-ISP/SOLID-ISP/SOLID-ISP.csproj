@@ -44,13 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Birds\Duck.cs" />
-    <Compile Include="Entities\Birds\Eagle.cs" />
-    <Compile Include="Entities\Birds\Bird.cs" />
-    <Compile Include="Entities\Birds\Ostrich.cs" />
-    <Compile Include="Entities\Cars\Car.cs" />
-    <Compile Include="Entities\Cars\FuelType.cs" />
-    <Compile Include="Entities\Cars\Truck.cs" />
+    <Compile Include="Entities\Devices\IDevice.cs" />
+    <Compile Include="Entities\Shapes\IShape.cs" />
     <Compile Include="Helpers\Logger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
