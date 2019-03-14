@@ -3,6 +3,8 @@
 
 ![Intro](https://github.com/Calabonga/SOLID/blob/master/Powerpoint/intro.png)
 
+Серия роликов о [SOLID](https://www.youtube.com/playlist?list=PLIB8be7sunXP9ogxcq0cq87vpXG_GxJDp) на канале [youtube.com](https://www.youtube.com/channel/UCWqjyIe9-ukFyG7I3eMVt4A)
+
 
 ## Статья на сайте ##
 Как-то не получилось у меня с первого раза найти информацию о том, как же надо применять SOLID на практике. Вот и решил самостоятельно написать статью, но... Я решил, что просто говорить о SOLID не имеет никакого смысла, потому что уже не мало об этом самом SOLID сказано и написано. Более того, всё что можно сказать, уже описано в Wikipedia. (хоть я и считаю, что информации маловато, особенно на русском языке).
