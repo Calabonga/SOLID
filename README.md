@@ -35,8 +35,8 @@
 ## Ссылки ##
 
 * Серия роликов о [SOLID](https://www.youtube.com/playlist?list=PLIB8be7sunXP9ogxcq0cq87vpXG_GxJDp) на канале [youtube.com](https://www.youtube.com/channel/UCWqjyIe9-ukFyG7I3eMVt4A)
-* Статья в блоге [www.calabonga.net](https://www.calabonga.net/blog/post/oop-na-praktike-nemnogo-informacii-o-solid) (сюда можно задавать вопросы)
-* Группа ["ВКонтакте"](https://vk.com/codingeasy) (сюда можно задавать вопросы)
+* Статья в блоге [www.calabonga.net](https://www.calabonga.net/blog/post/oop-na-praktike-nemnogo-informacii-o-solid)
+* Группа ["ВКонтакте"](https://vk.com/codingeasy)
 
 ## Keywords ##
 calabonga, программирование, обучение, tutorial, SOLID, ООП, OOP, объектно-ориентирование программирование, патерны, design  patterns, Single, Responsability, Open Close, Liskov Substitution, Interface Segregation Principle, Dependecny Injection
