@@ -28,7 +28,7 @@
 ![Interface segregation principle](https://github.com/Calabonga/SOLID/blob/master/Powerpoint/4.png)
 
 ## SOLID 5: Dependency inversion principle ##
-Примеры использования пятого принципа SOLID - Dependency inversion principle. 
+Примеры использования пятого принципа SOLID - Dependency inversion principle. А также сопутствующие понятия и термины: Inverse of Control, Service Locator, Ambient Context, Dependency Injection, Constructor injection, Property injection.
 
 ![Dependency inversion principle](https://github.com/Calabonga/SOLID/blob/master/Powerpoint/5.png)
 
